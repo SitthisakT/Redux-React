@@ -2,7 +2,10 @@ import { todosReducer, addTodo, toggleTodo } from "./index";
 
 test("should set initial state to empty array", () => {
   const state = undefined;
-  const expected = [];
+  const expected = [
+    { id: 0, text: "Learn React", completed: true },
+    { id: 1, text: "Learn Vue", completed: false }
+  ];
 
   const actual = todosReducer(state, {});
 
@@ -11,7 +14,7 @@ test("should set initial state to empty array", () => {
 
 test("should add todo", () => {
   const state = [];
-  const expected = [{ id: 0, text: "Learn Vue", completed: false }];
+  const expected = [{ id: 2, text: "Learn Vue", completed: false }];
 
   const actual = todosReducer(state, addTodo("Learn Vue"));
 
